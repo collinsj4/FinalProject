@@ -10,11 +10,11 @@ import pandas as pd
 def main():
     # Step 1: Load and preprocess data
     print("Loading data...")
-    data = load_data("data/Data.csv")
+    data = load_data("Data.csv")
 
     # Load additional hard samples and concatenate
     print("Loading extra hard samples and combining datasets...")
-    hard_samples = pd.read_csv("data/extra_hard_samples.csv")
+    hard_samples = pd.read_csv("extra_hard_samples.csv")
     data = pd.concat([data, hard_samples], axis=0).reset_index(drop=True)
 
     # Normalize the data
