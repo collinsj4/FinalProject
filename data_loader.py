@@ -3,11 +3,11 @@ import numpy as np
 
 
 def load_data():
-    """Load and combine both datasets"""
+    """Load and combine both datasets from current directory"""
     try:
-        # Load both datasets
-        df1 = pd.read_csv('data/Data.csv')
-        df2 = pd.read_csv('data/extra_hard_samples.csv')
+        # Load both datasets from current directory
+        df1 = pd.read_csv('Data.csv')
+        df2 = pd.read_csv('extra_hard_samples.csv')
 
         # Combine datasets
         df = pd.concat([df1, df2], axis=0).reset_index(drop=True)
