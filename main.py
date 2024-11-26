@@ -56,14 +56,13 @@ def run_phase3(X, y, best_preprocessor):
     return results
 
 
-def run_phase4(X, y, best_classifier):
+def run_phase4(X, y):
     """Phase 4: Ensemble methods"""
     model_trainer = ModelTrainer()
     results = {}
 
     for method in ['bagging', 'adaboost']:
-        ensemble = model_trainer.create_ensemble(best_classifier, method)
-        results[method] = model_trainer.train_evaluate(X, y, ensemble)
+        results[method] = model_trainer.train_ensemble(X, y, method)
 
     return results
 
@@ -82,14 +81,11 @@ def main():
 
         # Phase 3
         print("\nPhase 3: Classifier optimization")
-        X_final = X_scaled  # or apply best preprocessing method
-        phase3_results = run_phase3(X_final, y, best_preprocessor)
-        best_clf_name = find_best_method(phase3_results)
+        phase3_results = run_phase3(X_scaled, y, best_preprocessor)
 
         # Phase 4
         print("\nPhase 4: Ensemble methods")
-        best_classifier = ModelTrainer().classifiers[best_clf_name]
-        phase4_results = run_phase4(X_final, y, best_classifier)
+        phase4_results = run_phase4(X_scaled, y)
 
         # Collect all results
         results = {
