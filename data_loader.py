@@ -21,3 +21,13 @@ def load_data():
     except Exception as e:
         print(f"Error loading data: {e}")
         raise
+
+def load_test_data():
+    try:
+        test_data = pd.read_csv('test_feature_data.csv')  # Fixed filename
+        X_test = test_data.values
+        print(f"Loaded {len(test_data)} test samples")
+        return X_test
+    except Exception as e:
+        print(f"Error loading test data: {e}")
+        raise
