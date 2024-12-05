@@ -19,5 +19,5 @@ Running the Code
 Ensure all data files are in project root,
 Run only analysis.py to generate visualizations and predictions for part 2,
 CSV file - submission.csv - contains predictions for the 30 test samples,
-Run main.py for the whole project part 1 - average compile time ,
+Run main.py for the whole project part 1 - average compile time ,30
  mins specific for part 1 of this project.
