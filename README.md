@@ -1,5 +1,5 @@
 Contributors
 
-Collins Cheruiyot
-Jacob Denton
+Collins Cheruiyot,
+Jacob Denton,
 Hilton Benson
